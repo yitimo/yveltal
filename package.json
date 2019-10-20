@@ -10,7 +10,7 @@
   "scripts": {
     "collection:add": "node scripts/add.js",
     "start": "node main.js",
-    "serve": "pm2 main.js",
+    "serve": "pm2 start main.js",
     "eslint:init": "eslint --init"
   },
   "dependencies": {
