@@ -1,10 +1,11 @@
 const fs = require('fs')
 const path = require('path')
+const utils = require('../utils')
 
 console.info('Adding new comment collection...')
 
 const now = new Date()
-const id = generateId(now)
+const id = utils.generateId(now)
 
 const dbFolder = path.resolve(__dirname, '../database')
 if (!fs.existsSync(dbFolder)) {
@@ -28,22 +29,3 @@ fs.writeFileSync(newCommentCollection, JSON.stringify({
 console.log(fs.existsSync(path.resolve(__dirname, '../database')))
 
 console.info(`Added new comment collection with id=${id}`)
-
-/**
- * 生成 时间+8位随机字符 格式的id
- */
-function generateId(now) {
-    const charMap = 'QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm'
-    return `${formatedNow(now)}${[0, 0, 0, 0, 0, 0, 0, 0].reduce((result) => {
-        return result + charMap[Math.floor(Math.random() * charMap.length)]
-    }, '')}`
-}
-function formatedNow(now) {
-    return `${now.getFullYear()}${formatDigit(now.getMonth()+1)}${formatDigit(now.getDate())}${formatDigit(now.getHours())}${formatDigit(now.getMinutes())}${formatDigit(now.getSeconds())}`
-}
-function formatDigit(number) {
-    if (typeof number !== 'number') {
-        return number
-    }
-    return number < 10 ? `0${number}` : `${number}`
-}

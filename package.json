@@ -8,13 +8,16 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "collection:add": "node scripts/add.js",
+    "start": "node main.js",
     "eslint:init": "eslint --init"
   },
   "dependencies": {
-    "koa": "^2.10.0",
-    "koa-router": "^7.4.0"
+    "koa": "2.10.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "7.4.0"
   },
   "devDependencies": {
-    "eslint": "^6.5.1"
+    "eslint": "6.5.1"
   }
 }

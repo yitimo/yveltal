@@ -3,8 +3,9 @@ const router = new Router()
 
 router.get('/*', async (ctx) => {
     ctx.body = {
-        status: 'not found',
-        message: 'hello, world!!!'
+        code: '90001',
+        message: 'API_NOT_FOUND',
+        data: null,
     }
 })
 
