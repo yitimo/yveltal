@@ -1,0 +1,19 @@
+{
+  "name": "yveltal",
+  "version": "1.0.0",
+  "description": "Comment backend in nodejs for personal blog.",
+  "main": "main.js",
+  "repository": "git@github.com:yitimo/yveltal.git",
+  "author": "yitimo <admin@yitimo.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "eslint:init": "eslint --init"
+  },
+  "dependencies": {
+    "koa": "^2.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1"
+  }
+}
