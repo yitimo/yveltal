@@ -30,5 +30,5 @@ module.exports = async function (id, comment = {}) {
  * 保证评论发表时间间隔超过一分钟
  */
 function checkCreateTime(comments, now) {
-    return now - comments.reduce((result, next) => Math.max(result, next), 0) > 60000
+    return now - comments.reduce((result, next) => Math.max(result, next.createTime), 0) > 60000
 }
