@@ -12,8 +12,13 @@ Comment backend in nodejs for personal blog.
 2. 提供API支持不受限读取评论集。
 3. 提供API支持受限制新增评论集。
 
+- [ ] 本地开发自动重启(watch模式)
+- [ ] database目录周期备份至git
+    - [ ] 定时触发
+    - [ ] API触发
+
 ## 技术选型
 
 - koa.js
-- forever
+- pm2
 - ...
