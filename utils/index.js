@@ -1,6 +1,8 @@
 module.exports = {
     /**
      * 生成 时间+8位随机字符 格式的id
+     *
+     * **不要依赖同一上下文生成的两个id的随机性，有1/(52^8)的几率会生成两个相同id**
      */
     generateId(now) {
         const charMap = 'QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm'

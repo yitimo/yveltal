@@ -5,6 +5,7 @@ const app = new Koa()
 
 const rootRoutes = require('./apis/root')
 const commentRoutes = require('./apis/comment')
+const authRoutes = require('./apis/auth')
 const notFoundRoutes = require('./apis/404')
 
 app.use(async (ctx, next) => {
@@ -15,6 +16,7 @@ app.use(async (ctx, next) => {
 })
 app.use(bodyParser())
 app.use(rootRoutes.routes())
+app.use(authRoutes.routes())
 app.use(commentRoutes.routes())
 app.use(notFoundRoutes.routes())
 
