@@ -46,10 +46,7 @@ module.exports = {
       updateTime: now.getTime(),
     }
     const file = path.resolve(__dirname, `../../database/auth.json`)
-    if (!fs.existsSync(file)) {
-        throw new Error('COLLECTION_NOTFOUND')
-    }
-    const authDB = JSON.parse(fs.readFileSync(file).toString())
+    const authDB = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file).toString()) : []
     const index = authDB.findIndex((e) => e.openid === authData.openid)
     if (index < 0) {
       authDB.push({

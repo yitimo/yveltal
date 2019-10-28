@@ -24,16 +24,16 @@ router.post('/auth/check', async (ctx) => {
 })
 
 router.post('/auth/:code', async (ctx) => {
-  ctx.body = {
-    code: '200',
-    message: 'success',
-    data: {
-      openid: 'o968443Uyv5-Ou2kbo_hSNsp3kp0',
-      updateTime: 1572279545703,
-      token: 'coDIukpWTEkb7+2trtj4xg==',
-    },
-  }
-  return
+  // ctx.body = {
+  //   code: '200',
+  //   message: 'success',
+  //   data: {
+  //     openid: 'o968443Uyv5-Ou2kbo_hSNsp3kp0',
+  //     updateTime: 1572279545703,
+  //     token: 'coDIukpWTEkb7+2trtj4xg==',
+  //   },
+  // }
+  // return
   try {
     const {
       code,
