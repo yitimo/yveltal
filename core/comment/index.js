@@ -1,5 +1,6 @@
 const get = require('./get')
 const add = require('./add')
+const entry = require('./entry')
 
 module.exports = {
     /**
@@ -10,4 +11,8 @@ module.exports = {
      * 添加新评论
      */
     add,
+    /**
+     * 获取web上用于进入指定文章评论的小程序码
+     */
+    entry,
 }

@@ -5,6 +5,11 @@ const fs = require('fs')
 const path = require('path')
 
 module.exports = {
+  /**
+   * 通过code换取sessionKey
+   * 为微信登录凭证
+   * 凭证可能过期 这个由小程序端向微信检查来判断
+   */
   async code2Session(code) {
     const {
       errcode,
@@ -33,6 +38,11 @@ module.exports = {
       throw `${errcode}:${errmsg}`
     }
   },
+  /**
+   * 保存授权信息
+   * 小程序登录通过code换取sessionKey后 在服务端保存
+   * FIXME: 目前换取的sessionKey在服务端无过期时间 即完全信任微信的凭证
+   */
   async authorize({
     openid,
     session_key,
@@ -65,6 +75,10 @@ module.exports = {
       updateTime: authData.updateTime,
     }
   },
+  /**
+   * 检查服务端token有效性
+   * 目前token即为微信授权换取的sessionKey
+   */
   async check({
     token,
   }) {
